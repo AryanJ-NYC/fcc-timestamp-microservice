@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
@@ -11,5 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
