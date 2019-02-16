@@ -1,4 +1,5 @@
-const app = require('express')();
+const express = require('express');
+const app = express();
 
 app.get('/api/timestamp/:dateString?', (request, response) => {
   const dateString = request.params.dateString;
@@ -25,8 +26,10 @@ app.get('/api/timestamp/:dateString?', (request, response) => {
   }
 });
 
+app.use(express.static('public'));
+
 app.get('/', (request, response) => {
-  response.send('Timestamp Microservice works!');
+  response.sendFile(`${__dirname}/views/index.html`);
 });
 
 app.listen('8000', () => {
