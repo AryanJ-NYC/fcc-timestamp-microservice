@@ -32,6 +32,7 @@ app.get('/', (request, response) => {
   response.sendFile(`${__dirname}/views/index.html`);
 });
 
-app.listen('8000', () => {
-  console.log('listening on port 8000');
+const portNumber = process.env.PORT || 8000;
+app.listen(portNumber, () => {
+  console.log(`listening on port ${portNumber}`);
 });
